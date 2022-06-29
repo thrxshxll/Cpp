@@ -1,10 +1,6 @@
 // Name class definition
 // Member-function are defined in Name.cpp
 
-/**
- * Class to handle person's names
- * */
-
 #include <string>
 
 #ifndef Name_H
