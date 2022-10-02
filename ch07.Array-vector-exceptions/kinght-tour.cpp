@@ -1,4 +1,14 @@
-// Passeio do cavalo é o caralhooooooooooo
+/*
+
+7.22 (Knight’s Tour) One of the more interesting puzzlers for chess buffs is the Knight’s Tour
+problem. The question is this: Can the chess piece called the knight move around an empty chess-
+board and touch each of the 64 squares once and only once? We study this intriguing problem in
+depth in this exercise.
+The knight makes L-shaped moves (over two in one direction then over one in a perpendicu-
+lar direction). Thus, from a square in the middle of an empty chessboard, the knight can make
+eight different moves (numbered 0 through 7).
+
+*/
 
 #include <iostream>
 #include <cstdlib>
@@ -8,6 +18,7 @@
 using namespace std;
 const size_t row{8}, column{8};
 
+// Heuristic way for moving the knight, strategically
 array<array<int, row>, column> accessibility{
     2,3,4,4,4,4,3,2,
     3,4,6,6,6,6,4,3,
@@ -33,14 +44,14 @@ int main(){
     srand(static_cast<unsigned int>(time(0)));
 
     array<array<int, column>, row> board{};
-    size_t moveNumber, currentRow{4}, currentColumn{4};
+    size_t moveNumber, currentRow{static_cast<size_t>(rand()%8)}, currentColumn{static_cast<size_t>(rand()%8)};
 
     while(-1 != moveNumber){
         printBoard(board, currentRow, currentColumn);
 
         moveNumber=moveNumberSelect(board, currentRow, currentColumn);
 
-        system("sleep 0.15");
+        system("sleep 0.30");
         system("clear");
         if(knightMoves(board, moveNumber, currentRow, currentColumn)==64){
             printBoard(board, currentRow, currentColumn);
