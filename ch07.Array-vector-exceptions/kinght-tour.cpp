@@ -18,7 +18,7 @@ eight different moves (numbered 0 through 7).
 using namespace std;
 const size_t row{8}, column{8};
 
-// Heuristic way for moving the knight, strategically
+// Heuristic way for moving the knight, to lowest accessibility number.
 array<array<int, row>, column> accessibility{
     2,3,4,4,4,4,3,2,
     3,4,6,6,6,6,4,3,
